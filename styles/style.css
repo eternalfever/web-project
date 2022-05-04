@@ -9,9 +9,13 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 24px;
+}
+
 .app {
     height: 100vh;
-    font-family: 'BigNoodleTitlingCyr';
+    font-family: 'BigNoodleTitlingCyr', sans-serif;
     overflow: scroll;
 }
 
@@ -74,7 +78,7 @@
 .header__item {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.25vw;
+    font-size: 1rem;
 }
 
 .header__item:hover {
@@ -96,7 +100,7 @@
 }
 
 .intro__title {
-    font-size: 4.43vw;
+    font-size: 3.5417rem;
 }
 
 .intro__title span,
@@ -106,7 +110,7 @@
 
 .intro__subtitle {
     text-align: center;
-    font-size: 1.25vw;
+    font-size: 1rem;
     margin-top: 10px;
 }
 
@@ -117,13 +121,13 @@
     color: #ffffff;
 }
 
-.button {
+.btn {
     width: 8.85vw;
     height: 2.60vw;
     background: none;
     border-radius: 50px;
     font-family: 'BigNoodleTitlingCyr';
-    font-size: 1.25vw;
+    font-size: 1rem;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -133,30 +137,30 @@
     text-decoration: unset;
 }
 
-.button,
-.button:hover,
+.btn,
+.btn:hover,
 .header__item,
 .header__item:hover {
     transition: 0.3s;
 }
 
-.button_intro {
+.btn_intro {
     color: #FFFFFF;
     border: 2px solid #FFFFFF;
     margin-top: 1.04vw;
 }
 
-.button_intro:hover {
+.btn_intro:hover {
     background-color: #FFFFFF;
     color: #8567FC;
 }
 
-.button_activity {
+.btn_activity {
     color: #000000;
     border: 2px solid #8567FC;
 }
 
-.button_activity:hover {
+.btn_activity:hover {
     background-color: #8567FC;
     color: #FFFFFF;
 }
@@ -170,7 +174,7 @@
     text-align: center;
     padding: 0;
     margin: 0 0 3.13vw;
-    font-size: 3.85vw;
+    font-size: 3.5417rem;
 }
 
 .base__title span {
@@ -233,7 +237,6 @@
 
 .faq {
     background: #F3F3F3;
-    height: 36.46vw;
 }
 
 .footer {
@@ -259,10 +262,16 @@ input[type="checkbox"] {
 }
 
 .faq__question {
-    font-size: 1.56vw;
+    font-size: 1.25rem;
 }
 
 .faq__answer {
-    font-size: 1.25vw;
+    font-size: 1rem;
     color: #565656;
+}
+
+@media(max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
 }

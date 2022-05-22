@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.">
+    <link href="./styles/style.css" rel="stylesheet">
+    <title>NFT Marketplace</title>
+    <link type="Image/x-icon" href="./img/favicon.ico" rel="icon">
+    <script src="https://unpkg.com/moralis@1.7.0/dist/moralis.js"></script>
+    <script src="./scripts/main.js"></script>
+</head>
+
+<body class="app" onload="funonload()">
+
+    <header class="header">
+        <a class="header__logo" href="#">
+            <img src="./img/logo.png" alt="logo" />
+        </a>
+        <ul class="header__navigation">
+            <li>
+                <a class="header__item" href="#intro">Tranding activity</a>
+            </li>
+            <li>
+                <a class="header__item" href="#artists">Top marketplaces</a>
+            </li>
+            <li>
+                <a class="header__item" href="#faq">Learn more</a>
+            </li>
+        </ul>
+    </header>
+
+    <main class="content">
+
+        <section class="intro" id="intro">
+            <div class="intro__content">
+                <div class="intro__title">
+                    NFT ART &amp; <br /> COLLECTIBLES FOR THE <br /> <span>METAVERSE</span>
+                </div>
+
+                <a href="https://opensea.io/" target="_blank" class="btn btn_intro">
+                    GO TO OPENSEA
+                </a>
+
+            </div>
+            <div class="intro__cat ">
+                <img src="./img/intro/nyanCat.gif " alt="cat" />
+                <div class="intro__subtitle">nft nyancat sold for
+                    <span>$&nbsp;580&nbsp;000</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="activity" id="activity">
+            <div class="base__title"><span>Trending</span> activity</div>
+            <div class="activity__grid">
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+                <div class="activity__item">
+                    <img class="activity__img" src="./img/activity/loading.png" alt="nft" />
+                    <div class="activity__caption"></div>
+
+                    <div class="activity__title">
+
+                    </div>
+                    <div class="activity__subtitle">
+
+                    </div>
+                </div>
+            </div>
+            <a href="https://opensea.io/" target="_blank" class="btn btn_activity">
+                GO TO OPENSEA
+            </a>
+        </section>
+
+        <section class="artists" id="artists">
+            <div class="base__title">Top <span>NFT</span> Marketplaces</div>
+            <div class="artists__content">
+                <div class="artists__list">
+                    <div class="artists__item">
+                        <div class="artists__text artists__text_opensea">
+                            OpenSea
+                        </div>
+                    </div>
+                    <div class="artists__item">
+                        <div class="artists__text artists__text_rarible">
+                            Rarible
+                        </div>
+                    </div>
+                    <div class="artists__item">
+                        <div class="artists__text artists__text_superrare">
+                            SuperRare
+                        </div>
+                    </div>
+                </div>
+                <button class="artists__carousel-btn artists__carousel-btn_prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="41" viewBox="0 0 37 41" fill="none">
+                        <path d="M2.4269e-07 20.3515L36.75 -6.82263e-05L17 20.3515L36.75 40.7031L2.4269e-07 20.3515Z" fill="#8567FC"/>
+                    </svg>
+                </button>
+                <button class="artists__carousel-btn artists__carousel-btn_next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="41" viewBox="0 0 37 41" fill="none">
+                        <path d="M37 20.5L0.249998 40.8516L20 20.5L0.25 0.148436L37 20.5Z" fill="#8567FC"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+
+        <section class="faq" id="faq">
+            <div class="base__title">faq</div>
+            <div class="faq__content">
+                <ul class="faq__accordion">
+                    <li class="faq__item">
+                        <label for="accordion-1">
+                            <input type="checkbox" id="accordion-1">    
+                            <p class="faq__question">What does NFT mean?</p>                                
+                                <div class="faq__answer">
+                                    NFT stands for non-fungible token. It&rsquo;s generally built using the same kind of&nbsp;programming as&nbsp;cryptocurrency, like Bitcoin or&nbsp;Ethereum, but that&rsquo;s where the similarity ends. Physical money and cryptocurrencies are &laquo;fungible,&raquo; meaning they can be&nbsp;traded or&nbsp;exchanged for one another.
+                                </div>
+                        </label>
+                    </li>
+                    <li class="faq__item">
+                        <label for="accordion-2">
+                            <input type="checkbox" id="accordion-2">
+                            <p class="faq__question">What does metaverse mean?</p>
+                            <div class="faq__answer">
+                                A&nbsp;metaverse is&nbsp;a&nbsp;network of&nbsp;3D&nbsp;virtual worlds focused on&nbsp;social connection. In&nbsp;futurism and science fiction, it&nbsp;is&nbsp;often described as&nbsp;a&nbsp;hypothetical iteration of&nbsp;the Internet as&nbsp;a&nbsp;single, universal virtual world that is&nbsp;facilitated by&nbsp;the use of&nbsp;virtual reality (VR) and augmented reality (AR) headsets.
+                            </div>
+                        </label>
+                    </li>
+                    <li class="faq__item">
+                        <label for="accordion-3">
+                            <input type="checkbox" id="accordion-3">
+                            <p class="faq__question">How does buying NFT work?</p>
+                            <div class="faq__answer">
+                                An&nbsp;NFT&nbsp;&mdash; short for non-fungible token&nbsp;&mdash; essentially allows its buyer to&nbsp;say that they own the original copy of&nbsp;a&nbsp;digital file, in&nbsp;the same way you might own the original copy of&nbsp;a&nbsp;piece of&nbsp;physical art or&nbsp;the master file of&nbsp;a&nbsp;music recording.
+                            </div>
+                        </label>
+                    </li>
+                    <li class="faq__item">
+                        <label for="accordion-4">
+                            <input type="checkbox" id="accordion-4">
+                            <p class="faq__question">What is use of NFT?</p>                            
+                            <div class="faq__answer">
+                                NFTs can be&nbsp;used in&nbsp;real estate to&nbsp;simplify and speed up&nbsp;transactions, enable smart contracts for properties (allowing automatic payments) or&nbsp;even create decentralized home rental services&nbsp;&mdash; all while protecting sensitive data like credit card details.
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+    <div id="hellopreloader">
+        <div id="hellopreloader_preload"></div>
+    </div>
+</body>
+
+</html>

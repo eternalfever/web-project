@@ -2,10 +2,15 @@ const serverUrl = "https://jrffsta5kgpz.usemoralis.com:2053/server";
 const appId = "RHdGOpDM94gMymPyI6IRXBRGp5mybwmQibCkdn5m";
 
 Moralis.start({ serverUrl, appId });
+// В документации прописано, что переменные необходимо задавать именно таким образом.
+// С SERVER_URL и APP_ID не работает.
+
+const FADE_INTERVAL = 16;
+const TIME_NTERVAL = 1000;
 
 const getNFTs = async() => {
     const options = {
-        q: "painting",
+        q: "art",
         filter: "description",
         limit: 9
     };
@@ -14,7 +19,7 @@ const getNFTs = async() => {
     const titles = document.querySelectorAll(".activity__title");
     const subtitles = document.querySelectorAll(".activity__subtitle");
     let count = 0;
-    NFTs.result.forEach(function(nft) {
+    NFTs.result.forEach((nft) => {
         let url = fixURL(nft.token_uri);
         fetch(url)
             .then(response => response.json())
@@ -28,27 +33,28 @@ const getNFTs = async() => {
                 }
                 titles[count].innerHTML = data.name;
                 subtitles[count].innerHTML = data.description;
-                count++;
             })
             .catch((error) => {
                 console.log(error);
                 blocks[count].src = "./img/activity/hidden.png";
+            })
+            .finally(() => {
                 count++;
             });
-    })
+    });
 }
 
-fixURL = (url) => {
+const fixURL = (url) => {
     if (url.startsWith("ipfs://ipfs/") || url.startsWith("ipfs://")) {
         return fixURL_IPFS(url);
-    } else if (url.slice(-4) == "json") {
+    } else if (url.slice(-4) === "json") {
         return url;
     } else {
         return url + "?format=json";
     }
 }
 
-fixURL_IPFS = (url) => {
+const fixURL_IPFS = (url) => {
     if (url.startsWith("ipfs://ipfs/")) {
         return "https://ipfs.moralis.io:2053/ipfs/" + url.split("ipfs://ipfs/").slice(-1)[0];
     } else if (url.startsWith("ipfs://")) {
@@ -56,22 +62,22 @@ fixURL_IPFS = (url) => {
     }
 }
 
-fadeOut = (el) => {
+const fadeOut = (el) => {
     el.style.opacity = 1;
-    var interhellopreloader = setInterval(function() {
+    const interhellopreloader = setInterval(function() {
         el.style.opacity = el.style.opacity - 0.05;
         if (el.style.opacity <= 0.05) {
             clearInterval(interhellopreloader);
             hellopreloader.style.display = "none";
         }
-    }, 16);
+    }, FADE_INTERVAL);
 }
 
-funonload = () => {
+const funonload = () => {
     let hellopreloader = document.getElementById("hellopreloader_preload");
     setTimeout(function() {
         fadeOut(hellopreloader);
-    }, 1000);
+    }, TIME_NTERVAL);
 };
 
 getNFTs();

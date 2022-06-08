@@ -1,5 +1,28 @@
 import React, { useState } from 'react';
 
+interface IAccordion {
+    answer: string;
+    question: string;
+    id: number
+}
+
+function Accordion(
+    {
+    id,
+    answer,
+    question}: IAccordion){
+    return (
+        <li key={id} className="faq__item">
+            <label htmlFor={"accordion-" + id}>
+                <input type="checkbox" id={"accordion-" + id}/>    
+                <p className="faq__question">{question}</p>                                
+                <div className="faq__answer">{answer}</div>
+            </label>
+        </li>
+    )
+
+}
+
 export default function Faq() {
     return (
         <section className="faq" id="faq">
@@ -7,13 +30,12 @@ export default function Faq() {
             <div className="faq__content">
                 <ul className="faq__accordion">
                     {DATA.map((item, i) => (
-                        <li key={i} className="faq__item">
-                            <label htmlFor={"accordion-" + i}>
-                                <input type="checkbox" id={"accordion-" + i}/>    
-                                <p className="faq__question">{item.question}</p>                                
-                                <div className="faq__answer">{item.answer}</div>
-                            </label>
-                        </li>
+                        <Accordion
+                            key={i}
+                            id={i}
+                            question={item.question}
+                            answer={item.answer}
+                        />
                     ))}
                 </ul>
             </div>

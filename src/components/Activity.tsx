@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import loading from "../../src/img/activity/loading.png";
 import { useMoralisWeb3Api } from "react-moralis";
 import { ReactDOM } from "react";
 import { fixIPFS, fixURL, IPFS_SPLITTER_ONCE } from "../utils/utils";
+import Moralis from "moralis";
+
 
 export default function Activity() {
+
+    const moralisWeb3Api = useMoralisWeb3Api();
    
     //Данные по 1 nft
     const [nfts, setNfts] = useState({
@@ -13,38 +17,29 @@ export default function Activity() {
         description:""
     });
 
+    const [error, setError] = useState(null);
+
     //Список с nft (объектами), с которого через map
     //буду выводить данные в ActivityItem
     const [nftlst, setNftlst] = useState([{}]);
 
-    /*const GetNFTs = async() => {
-        const NFTs = await useMoralisWeb3Api().token.searchNFTs({
+    const GetNFTs = useCallback(async() => {
+        const NFTs = await moralisWeb3Api.token.searchNFTs({
             q: "art",
             filter: "description",
             limit: 9
         });
-        return NFTs;
-    }*/
-
-    //Проблема тут
-
-    useEffect(() => {
-        GetNFTs();
-    }, []);
-    
-    const GetNFTs = async() => {
-        const NFTs = await useMoralisWeb3Api().token.searchNFTs({
-            q: "art",
-            filter: "description",
-            limit: 9
-        });
+        let count =0;
+        console.log(NFTs);
         NFTs.result?.forEach((nft) => {
             let url:string = fixURL(nft.token_uri)!;
             fetch(url)
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 if (!data.image.startsWith(IPFS_SPLITTER_ONCE)) {
                     let img_link = data.image;
+                    
                     setNfts({
                         ...nfts,
                         img:img_link
@@ -62,22 +57,26 @@ export default function Activity() {
                     name: data.name,
                     description: data.description
                 });
-                console.log(nfts);
+                setNftlst([...nftlst, nfts]);
+
             })
-            .catch((error) => {
+            .catch((er) => {
             setNfts({
                 ...nfts,
                 img: "./img/activity/hidden.png"
             });
+            setError(er);
             })
             .finally(() => {
                 setNftlst([...nftlst, nfts]);
-                console.log(nftlst);
-                console.log(nfts);
+                count++;
             });
         })
-    }
-    
+    },[moralisWeb3Api.token, nftlst,nfts])
+
+    useEffect(() => {
+        GetNFTs();
+    }, [GetNFTs]);
     
     return (
         <section className="activity" id="activity">

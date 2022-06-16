@@ -4,7 +4,9 @@ import "../src/styles/style.css";
 import App from './App';
 import { MoralisProvider } from "react-moralis";
 import Moralis from "moralis";
-
+/**
+ * подключение к облачному серверу Moralis
+ */
 Moralis.start({
     serverUrl: "https://jrffsta5kgpz.usemoralis.com:2053/server" ,
     appId: "RHdGOpDM94gMymPyI6IRXBRGp5mybwmQibCkdn5m"

@@ -17,7 +17,7 @@ export const ARTLST = [
   },
 ];
 
-const DATA = [
+export const DATA = [
   {
     question: "What does NFT mean?",
     answer:
@@ -45,7 +45,7 @@ const DATA = [
   },
 ];
 
-const HEADER = [
+export const HEADER = [
   {
     text: "Learn more",
     href: "#faq",

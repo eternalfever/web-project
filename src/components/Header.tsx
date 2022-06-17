@@ -1,4 +1,5 @@
 import { ModuleResolutionKind } from "typescript";
+import HEADER from "../utils/constants";
 import logo from "../../src/img/logo.gif";
 
 interface IHeaderItem {
@@ -37,18 +38,3 @@ function HeaderElement({ text, href }: IHeaderItem) {
     </li>
   );
 }
-
-const HEADER = [
-  {
-    text: "Learn more",
-    href: "#faq",
-  },
-  {
-    text: "Top marketplaces",
-    href: "#artists",
-  },
-  {
-    text: "Tranding activity",
-    href: "#intro",
-  },
-];

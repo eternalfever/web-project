@@ -3,7 +3,6 @@ export const IPFS_SPLITTER_ONCE = "ipfs://";
 export const IPFS_SPLITTER_DOUBLE = "ipfs://ipfs/";
 /**
  * Приводит ссылку на объект NFT в необходимый для работы формат
- *
  * @param {string} url первичная ссылка, полученная в результатe обращения к API
  * @returns {string} ссылка в формате json
  */
@@ -21,7 +20,6 @@ export const fixURL = (url: string) => {
 };
 /**
  * Приводит ссылку, начинающуюся с ipfs://, в рабочий формат
- *
  * @param {string} url ссылка, начинающаяся с ipfs://
  * @returns {string} ссылка, начинающаяся с https://ipfs.moralis.io:2053/ipfs/
  */

@@ -10,7 +10,6 @@ export default function Intro() {
           NFT ART &amp; <br /> COLLECTIBLES FOR THE <br />{" "}
           <span>METAVERSE</span>
         </div>
-
         <a href="https://opensea.io/" target="_blank" className="btn btn_intro">
           GO TO OPENSEA
         </a>

@@ -1,3 +1,8 @@
+import raribleImg from "../img/markets/rarible.svg";
+import superrareImg from "../img/markets/superrare.png";
+import binanceImg from "../img/markets/binance.svg";
+import openseaImg from "../img/markets/opensea.svg";
+
 export const ARTLST = [
   {
     name: "Binance",

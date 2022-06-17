@@ -10,7 +10,6 @@ interface IArtist {
  * Формирует блок карусели маркетплейсов
  * @param name название маркетплейса
  * @param logoUrl ссылка на логотип
- * @returns блок с названием и лого маркетплейса
  */
 function Artist({ name, logoUrl }: IArtist) {
   const ArtistStyled = styled.div`
@@ -28,7 +27,7 @@ function Artist({ name, logoUrl }: IArtist) {
   );
 }
 /**
- * @returns экран Artists с каруселью маркетплейсов
+ * экран Artists с каруселью маркетплейсов
  */
 export default function Artists() {
   return (

@@ -4,7 +4,7 @@ import { useMoralisWeb3Api } from "react-moralis";
 import { fixIPFS, fixURL, IPFS_SPLITTER_ONCE } from "../utils/utils";
 
 /**
- * @returns экран NFTs с блоками NFT
+ * экран NFTs с блоками NFT
  */
 export default function Activity() {
   const moralisWeb3Api = useMoralisWeb3Api();
@@ -27,14 +27,12 @@ export default function Activity() {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           if (!data.image.startsWith(IPFS_SPLITTER_ONCE)) {
             const imgUrl = data.image;
             setNft({
               ...nft,
               img: imgUrl,
             });
-            console.log(nft);
           } else {
             const imgUrl: string = fixIPFS(data.image)!;
             setNft({
@@ -84,7 +82,7 @@ export default function Activity() {
   );
 }
 /**
- * @returns блок для одного NFT
+ * блок для одного NFT
  */
 const ActivityItem = () => {
   return (

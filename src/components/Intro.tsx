@@ -1,6 +1,6 @@
 import nyan from "../../src/img/intro/nyanCat.gif";
 /**
- * @returns стартовый экран Collectibles for the metaverse
+ * стартовый экран Collectibles for the metaverse
  */
 export default function Intro() {
   return (

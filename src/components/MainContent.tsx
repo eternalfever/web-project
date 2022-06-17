@@ -3,7 +3,7 @@ import Artists from "./Artists";
 import Intro from "./Intro";
 import Faq from "./Faq";
 /**
- * @returns основной контент лендинга без Header и Footer
+ * основной контент лендинга без Header и Footer
  */
 export default function MainContent() {
   return (

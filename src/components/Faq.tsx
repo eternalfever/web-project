@@ -9,8 +9,7 @@ interface IAccordion {
  * Формирует элемент аккордеона вопросов/ответов
  * @param id  идентификатор элемента
  * @param question вопрос
- * @param answer ответ на вопрос
- * @returns элемент вопрос/ответ для аккордеона
+ * @param answer ответ на вопрос элемент вопрос/ответ для аккордеона
  */
 function Accordion({ id, answer, question }: IAccordion) {
   return (
@@ -24,7 +23,7 @@ function Accordion({ id, answer, question }: IAccordion) {
   );
 }
 /**
- * @returns экран FAQ с аккорденоном вопросов/ответов
+ * экран FAQ с аккорденоном вопросов/ответов
  */
 export default function Faq() {
   return (

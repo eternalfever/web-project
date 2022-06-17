@@ -7,7 +7,7 @@ interface IHeaderItem {
   href: string;
 }
 /**
- * @returns шапка сайта с навигацией по лендингу
+ * шапка сайта с навигацией по лендингу
  */
 export default function Header() {
   return (
@@ -27,7 +27,6 @@ export default function Header() {
  * Формирование элемента меню в хедере
  * @param text текст ссылки в хедере
  * @param href якорная ссылка для перехода на необходимый экран
- * @returns элемент меню в хедере
  */
 function HeaderElement({ text, href }: IHeaderItem) {
   return (

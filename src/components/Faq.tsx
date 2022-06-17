@@ -1,4 +1,4 @@
-import DATA from "../utils/constants";
+import { DATA } from "../utils/constants";
 
 interface IAccordion {
   answer: string;

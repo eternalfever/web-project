@@ -1,5 +1,5 @@
 import { ModuleResolutionKind } from "typescript";
-import HEADER from "../utils/constants";
+import { HEADER } from "../utils/constants";
 import logo from "../../src/img/logo.gif";
 
 interface IHeaderItem {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Carousel from "react-elastic-carousel";
-import ARTLST from "../utils/constants";
+import { ARTLST } from "../utils/constants";
 import raribleImg from "../img/markets/rarible.svg";
 import superrareImg from "../img/markets/superrare.png";
 import binanceImg from "../img/markets/binance.svg";
